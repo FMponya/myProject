@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>databases</title>
+</head>
+<body>
+	<h><strong>The Following are Database SQL Commands that i basically worked on during my Database Project</strong></h>
+	<br>
+		<p>
+# 1. The SQL query that creates database with the name WorksOn
+	
+	CREATE DATABASE WorksOn;
+	<br><br>
+	
+# Query to create Employee Table, Projects Table, Department Table and Responsibility Table
+<br><br>
+CREATE TABLE Employee (
+	Emp_No VARCHAR(20),
+	Emp_Name VARCHAR(70),
+	B_Date VARCHAR(30),
+	Title VARCHAR(290),
+	Salary INT(10),
+	Department_No VARCHAR(15)
+);
+
+<br><br>
+CREATE TABLE Projects (
+	Proj_No VARCHAR(15),
+	Proj_Name VARCHAR(265),
+	Budget CHAR (30),
+	Department_No VARCHAR(270)
+);
+<br><br>
+
+CREATE TABLE Department (
+	Department_No VARCHAR(18),
+	Department_Name VARCHAR(55)
+);
+<br><br>
+
+CREATE TABLE Schedule (
+	Emp_No VARCHAR(19),
+	Proj_No VARCHAR(20),
+	Responsibility VARCHAR(300),
+	Hours INT
+);
+
+<br><br>
+
+
+# 2. An SQL statement that insert data in all tables as presented in table above enter
+<br><br>
+INSERT INTO Employee (Emp_No, Emp_Name, B_Date, Title, Salary, Department_No) 
+	VALUES
+		('Emp201', 'Donald', '20-10-1995', 'Sales Rep', '100000', 'D4'),
+		('Emp202', 'James', '12-12-1995', 'CEO', '500000', 'D1'),
+		('Emp203', 'Shalom', '20-12-2000', 'Accountant', '32000', 'D1'),
+		('Emp204', 'Alinafe', '20-10-1995', 'IT Officer', '120000', 'D2'),
+		('Emp205', 'Patrick', '15-09-1995', 'Marketer', '20000', 'D3'),
+		('Emp206', 'Stella', '20-10-1996', 'Sales Rep', '34000', 'D4')
+;
+<br><br>
+INSERT INTO Projects (Proj_No, Proj_Name, Budget, Department_No) 
+	VALUES
+		('P1', 'Strategic Planning', 'MK1000000', 'D1'),
+		('P2', 'Web Development', 'MK700000', 'D2'),
+		('P3', 'Digital Marketing', 'MK200000', 'D3'),
+		('P4', 'Community Outreach', 'MK5000000', 'D4')
+;
+<br><br>
+
+INSERT INTO Department (Department_No, Department_Name)
+	VALUES
+		('D1', 'Administration'),
+		('D2', 'IT'),
+		('D3', 'Marketing'),
+		('D4', 'Sales')
+;
+<br><br>
+INSERT INTO Schedule (Emp_No, Proj_No, Responsibility, Hours)
+	VALUES
+		('Emp204', 'P2', 'Design Website', '4'),
+		('Emp205', 'P3', 'Create Campaigns', '11'),
+		('Emp203', 'P1', 'Prepare S. Plan Budget', '8')
+;
+
+
+
+
+
+
+<br><br>
+# 3. An SQL query that returns the project number and name for projects with a budget greater than MK500, 000
+<br>
+
+	SELECT Proj_No, Proj_Name FROM Projects WHERE Budget > '500000';
+<br><br>
+# 4. An SQL query that returns all works on records where hours worked is less than 10.
+
+	SELECT * FROM Schedule WHERE Hours < 10;
+
+<br><br>
+
+
+
+
+# 5. An SQL query that returns the employees (number and name only) who receive less than MK350, 000.
+
+	SELECT Emp_No, Emp_Name FROM Employee WHERE Salary < 350000;
+	
+
+
+
+<br><br>
+
+# 6. An SQL query that returns the employees (name only) in department 'D1' ordered by decreasing salary.
+
+	SELECT Emp_Name FROM Employee WHERE Department_No = 'D1' ORDER BY Salary DESC;
+	
+
+
+
+<br><br>
+
+# 7. An SQL query that returns the departments (all fields) ordered by ascending department name.
+
+	SELECT * FROM Department ORDER BY Department_Name ASC;
+
+
+
+<br>
+<br>
+# 8. An SQL query that returns the employee name, department name, and employee title.
+
+	SELECT Employee.Emp_Name, Department.Department_Name, Employee.Title FROM Employee INNER JOIN Department ON Employee.Department_No=Department.Department_No;
+
+
+	<br>
+	<br>
+# 9. An SQL query that returns the project name, hours worked, and project number for
+all works on records where hours > 15-09-1995<br>
+
+	SELECT Projects.Proj_Name, Schedule.Hours, Schedule.Proj_No FROM Projects INNER JOIN Schedule ON Projects.Proj_No=Schedule.Proj_No WHERE Schedule.Hours>10;
+</p>
+</body>
+</html>

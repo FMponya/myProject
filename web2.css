@@ -1,0 +1,53 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    background-image: url("cats.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    line-height: 2;
+    
+
+}
+
+
+header {
+    padding: 20px;
+    font-size: medium;
+    text-align: justify;
+    width: 70vh;
+    height: 160vh;
+    background-color:beige;
+    font-family: sans-serif;
+    margin-left: 10vh;
+    padding-right: 10vh;
+    margin-top: 6vh;
+    margin-bottom: 20vh;
+    
+
+
+}
+.paragraph1{
+    color: black;
+    
+
+}
+img{
+    display: -webkit-box;
+    float: right;
+    width: 80vh;
+    height: 167vh;
+    margin-right: 50vh;
+    
+    
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
